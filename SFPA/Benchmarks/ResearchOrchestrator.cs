@@ -5,8 +5,8 @@ using SFPA.Solvers;
 namespace SFPA.Benchmarks;
 
 public class ResearchOrchestrator {
-    private readonly int[] _densities = [/*2, 10,50,*/ 100];
-    private readonly int[] _vertexCounts = [/*50000, 100000,*/500000];
+    private readonly int[] _densities = [2, 10,50, 100];
+    private readonly int[] _vertexCounts = [50000, 100000,500000];
     private readonly int _maxThreads = 16;
     private readonly int _benchmarkIterations = 3;
 

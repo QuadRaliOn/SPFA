@@ -12,8 +12,7 @@ namespace SFPA
             Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.High;
 
             new ResearchOrchestrator().RunAndExport("research_results.csv");
-
-            Console.WriteLine("\nНатисніть будь-яку клавішу...");
+            
             Console.ReadKey();
         }
     }
