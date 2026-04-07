@@ -1,7 +1,22 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=6db0659f_002Dc7c4_002D4653_002D929a_002D1baceb95fa0a/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SpfaCorrectnessTests" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0379fdc2_002D6286_002D41ad_002Da4cb_002D795328a807fb/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Parallel_ShouldMatchSequential_OnRandomGraphs(vCount: 1000, density: 10)" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::5096062D-88EF-4D5B-8CE5-E428A7675A95::net10.0::Tests.SpfaCorrectnessTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5096062D-88EF-4D5B-8CE5-E428A7675A95::net10.0::Tests.SpfaParallelTests.Parallel_ShouldMatchSequential_OnRandomGraphs.Parallel_ShouldMatchSequential_OnRandomGraphs(vCount: 1000, density: 10)&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=31975fe3_002D056f_002D4511_002Db0b5_002De0095aeb1fea/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="Parallel_ShouldMatchSequential_OnRandomGraphs(vCount: 5000, density: 50)" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::5096062D-88EF-4D5B-8CE5-E428A7675A95::net10.0::Tests.SpfaParallelTests.Parallel_ShouldMatchSequential_OnRandomGraphs.Parallel_ShouldMatchSequential_OnRandomGraphs(vCount: 5000, density: 50)&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	
+	
+	
+	
+	
+	
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=f1e22e34_002D34d3_002D4fc2_002Dafba_002D9877cbad76fa/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SpfaParallelTests #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::5096062D-88EF-4D5B-8CE5-E428A7675A95::net10.0::Tests.SpfaParallelTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

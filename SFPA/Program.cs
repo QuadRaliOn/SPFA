@@ -11,9 +11,12 @@ namespace SFPA
             Console.OutputEncoding = Encoding.UTF8;
             Process.GetCurrentProcess().PriorityClass = ProcessPriorityClass.High;
 
-            new ResearchOrchestrator().RunAndExport("research_results.csv");
+            new ResearchOrchestrator().RunBatchSizeBenchmark();
+            //new ResearchOrchestrator().RunAndExport("research_results.csv");
             
             Console.ReadKey();
         }
+        
+        
     }
 }

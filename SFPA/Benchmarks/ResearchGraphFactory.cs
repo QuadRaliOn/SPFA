@@ -25,7 +25,7 @@ public static class ResearchGraphFactory {
             int from = rand.Next(v);
             int to = rand.Next(v);
 
-            if (from == to) {
+            if (from == to || adj[from].Any(e => e.To == to)) {
                 i--;
                 continue;
             }

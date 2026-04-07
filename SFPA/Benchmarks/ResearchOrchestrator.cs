@@ -5,10 +5,10 @@ using SFPA.Solvers;
 namespace SFPA.Benchmarks;
 
 public class ResearchOrchestrator {
-    private readonly int[] _densities = [2, 10,50, 100];
-    private readonly int[] _vertexCounts = [50000, 100000,500000];
+    private readonly int[] _densities = [2, 10,50, 100,200];
+    private readonly int[] _vertexCounts = [1000,5000,10000,50000, 100000,500000,1000000];
     private readonly int _maxThreads = 16;
-    private readonly int _benchmarkIterations = 3;
+    private readonly int _benchmarkIterations = 20;
 
     public void RunAndExport(string fileName) {
         var allResults = new List<ResearchResult>();
@@ -59,13 +59,56 @@ public class ResearchOrchestrator {
 
         return totalMs / _benchmarkIterations;
     }
+    
+    public void RunBatchSizeBenchmark()
+    {
+        int v = 50000;
+        int density = 50;
+        int threads = 8; 
+        int[] batchSizes = { 2, 4, 8, 16, 32, 64, 96, 128, 256, 512, 1024 };
+        
+        var adj = ResearchGraphFactory.Create(v, density);
+        var sequentialSolver = new SequentialSpfaSolver();
+    
+        Console.WriteLine($"BatchSize V={v}, D={density}, Threads={threads}");
+        
+        var sw = Stopwatch.StartNew();
+        sequentialSolver.Solve(v, adj, 0);
+        sw.Stop();
+        double seqTime = sw.Elapsed.TotalMilliseconds;
+        Console.WriteLine($"[Base] Sequential Time: {seqTime:F2}ms");
+        Console.WriteLine("BatchSize | Time (ms) | Speedup");
+        Console.WriteLine("--------------------------------");
+
+        foreach (int b in batchSizes)
+        {
+            var solver = new BatchParallelSpfaSolver(threads, b);
+            
+            solver.Solve(v, adj, 0);
+            
+            double totalMs = 0;
+            int iterations = 2;
+            for (int i = 0; i < iterations; i++)
+            {
+                sw.Restart();
+                solver.Solve(v, adj, 0);
+                sw.Stop();
+                totalMs += sw.Elapsed.TotalMilliseconds;
+            }
+
+            double avgMs = totalMs / iterations;
+            double speedup = seqTime / avgMs;
+        
+            Console.WriteLine($"{b,9} | {avgMs,9:F2} | {speedup:F2}x");
+        }
+    }
 
     private void ExportToCsv(List<ResearchResult> results, string fileName) {
         var csv = new StringBuilder("Vertices;Edges;Density;Threads;TimeMs;Speedup\n");
         foreach (var r in results)
-            csv.AppendLine($"{r.Vertices};{r.Edges};{r.Density};{r.Threads};{r.TimeMs:F4};{r.Speedup:F4}");
+            csv.AppendLine($"{r.Vertices}; {r.Edges}; {r.Density}; {r.Threads}; {r.TimeMs:F4}; {r.Speedup:F4}");
         File.WriteAllText(fileName, csv.ToString());
-        Console.WriteLine($"\n[Done] Файл: {Path.GetFullPath(fileName)}");
+        Console.WriteLine($"\n[Done] file: {Path.GetFullPath(fileName)}");
     }
 
     private static void WarmUp(IShortestPathSolver solver, int v, List<Edge>[] adj) => 

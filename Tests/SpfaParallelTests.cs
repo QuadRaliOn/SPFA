@@ -9,8 +9,12 @@ public class SpfaParallelTests {
     [InlineData(1000, 10)]   
     [InlineData(5000, 50)]   
     [InlineData(10000, 2)]   
-    [InlineData(30000, 30)]   
+    [InlineData(30000, 20)]   
+    [InlineData(40000, 35)]   
+    [InlineData(35000, 30)]   
     [InlineData(50000, 100)]   
+    [InlineData(100000, 50)]
+    [InlineData(500000, 50)]
     public void Parallel_ShouldMatchSequential_OnRandomGraphs(int vCount, int density) {
         var adj = ResearchGraphFactory.Create(vCount, density);
         int source = 0;

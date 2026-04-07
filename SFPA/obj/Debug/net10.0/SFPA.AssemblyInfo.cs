@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SFPA")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+30dd0dd75bb0f319c387d559a600bfc93ec4cbfc")]
 [assembly: System.Reflection.AssemblyProductAttribute("SFPA")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SFPA")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
